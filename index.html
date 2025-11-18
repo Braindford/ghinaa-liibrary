@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>untuk ginaaa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li span {
+            font-weight: bold;
+            color: #555;
+        }
+        a.button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+        a.button:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Tombol Error */
+        button.button-error {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-left: 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button.button-error:hover { background-color: #c82333; }
+
+        .modal-overlay {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            opacity: 0;
+            visibility: hidden;
+            
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            
+            transform: scale(0.9);
+            
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.show .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: #dc3545; 
+        }
+
+        .modal-content .tombol-tutup {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .modal-content .tombol-tutup:hover {
+            background: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+        <!-- 📚  -->
+    <h1>GHINAA LIBRARY</h1>
+    <p>Mu download disini aja ya gin, di ig gak bisa kirim file njir</p>
+
+    <h2>🌏 Series Bumi</h2>
+    <ul>
+        <li>
+            <span>Bumi - Tere Liye</span>
+            <a href="1 Bumi - Tere Liye.pdf" download class="button">Download</a>
+        </li>
+        <li>
+            <span>Bulan - Tere Liye</span>
+            <a href="2 Bulan - Tere Liye.pdf" download class="button">Download</a>
+        </li>
+        <li>
+            <span>Matahari - Tere Liye</span>
+            <a href="3 Matahari - Tere Liye.pdf" download class="button">Download</a>
+        </li>
+        <li>
+            <span>Bintang - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+<!--             <a href="4 Bintang - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Ceros & Batozar - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="5 Ceros dan Batozar - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Komet - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="6 Komet - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Komet Minor - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="7 Komet Minor - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Selena - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="8 Selena - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Nebula - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="9 Nebula - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Lumpu - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+           <!--  <a href="10 Lumpu - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Si Putih - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+           <!--  <a href="11 Si Putih - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Bibi Gill - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="12 Bibi Gill - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Sagaras - Tere Liye</span>
+             <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="13 Sagaras - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Matahari Minor - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+<!--             <a href="14 Matahari Minor - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Ily - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+            <!-- <a href="15 Ily - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Aldebaran I - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+<!--             <a href="16 Aldebaran bagian I - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Hana Tara Hata - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+<!--             <a href="17 Hana Tara Hata - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+    </ul>
+
+
+    <h2>🦸 Series Aksi</h2>
+    <ul>
+        <li>
+            <span>Negeri para Bedebah - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+<!--             <a href="1 Negeri Para bedebah - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Negeri di Ujung Tanduk - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+<!--             <a href="2 Negeri di Ujung Tanduk - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+        <li>
+            <span>Pulang - Tere Liye</span>
+            <a href="3 Pulang - Tere Liye.pdf" download class="button">Download</a>
+        </li>
+         <li>
+            <span>Pergi - Tere Liye</span>
+            <a href="4 Pergi - Tere Liye.pdf" download class="button">Download</a>
+        </li>
+         <li>
+            <span>Pulang Pergi - Tere Liye</span>
+            <a href="5 Gnalup Pergi - Tere Liye.pdf" download class="button">Download</a>
+        </li>
+         <li>
+            <span>Bedebah di Ujung Tanduk - Tere Liye</span>
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+<!--             <a href="6 Bedebah Di Ujung Tanduk - Tere Liye.pdf" download class="button">Download</a> -->
+        </li>
+         <li>
+            <span>Tanah para Bandit - Tere Liye</span>
+<!--             <a href="7 Tanah Para Bandit- Tere Liye.pdf" download class="button">Download</a> -->
+            <button class="button-error" onclick="tampilkanError()">Download</button>
+        </li>
+    </ul>
+
+    <div id="modalError" class="modal-overlay">
+        <div class="modal-content">
+            <h2>⚠️ DUH, ERROR GINNN</h2>
+            <p>Kayaknya ada masalah gin, coba mu tanyain ke pembuatnya.</p>
+            <button class="tombol-tutup" onclick="sembunyikanError()">Tutup</button>
+        </div>
+    </div>
+
+<script>
+  
+    const modal = document.getElementById('modalError');
+
+    function tampilkanError() {
+        modal.classList.add('show');
+    }
+
+    function sembunyikanError() {
+        modal.classList.remove('show');
+    }
+
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            sembunyikanError();
+        }
+    });
+
+</script>
+
+    </body>
+</html>
